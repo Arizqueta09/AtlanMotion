@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATLANMOTION</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  
+
+</head>
+<body>
+  <header class="header">
+    <nav class="navbar2">
+      <ul>
+        <li class="pedim"><a class="aa" href="index.html"><img class="logo_b" src="imagenes/Logo AM Blanco.png" alt="logo"></a></li>
+        <li class="ped"><a class="aa" href="rutinas.html">RUTINAS</a></li>
+        <li class="ped"><a class="aa" href="retos.html">RETOS</a></li>
+        <li class="ped"><a class="aa" href="tienda.html">TIENDA</a></li>
+        <li class="ped"><a class="aa" href="nosotros.html">NOSOTROS</a></li>
+        <li class="ped"><a class="aa" href="contacto.html">CONTACTO</a></li>
+      </ul>
+  </nav>
+  </header>
+
+      <div class="cont2">
+        <div class="cont3">
+            <img class="imm" src="imagenes/rutinas.png" alt="rut">
+            <h1 class="h41">Encuentra la rutina perfecta para ti y comienza a moverte
+                hacia una vida más saludable. Diseñadas para 
+                adaptarse a tu ritmo, nuetras rutinas de ayudarán a
+            mantenerte en movimiento y alcanzar tus objetivos. </h1>
+          </div>
+          <br><br>
+          <a href="#destino" class="scroll"><div class="btnCirculo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="flecha" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1"/>
+              </svg>
+          </div></a>
+      </div>
+
+
+      <div id="destino" class="cont4">
+        <div class="cont4_1">
+            <img class="imlog" src="imagenes/principiantes.png" alt="prin">
+            <h4>Empieza con una base sólida y desarrollada
+                hábitos que te acompañarán en el camino.
+                Estas rutinas están diseñadas para que te 
+                adaptes al ejercicio de manera progresiva
+                y segura, fortaleciendo tu cuerpo,
+                mejorando tu resistencia y preparándote 
+                para nuevos desafios.
+            </h4>
+            <br>
+            <a href="principiantes.html">
+              <div class="btnVAMOS">
+              <h5>VAMOS</h5>
+            </div></a>
+        </div>
+        <div class="cont4_2">
+          <div class="contim">
+            <img class="im1" src="imagenes/a4.1.jpg" alt="imagen1"><img class="im2" src="imagenes/a5.1.jpg" alt="imagen2">
+          </div>
+        </div>
+      </div>
+
+
+      
+      <div class="cont44">
+        <div class="cont4_1_1">
+            <img class="im1_1" src="imagenes/a6.png" alt="sombra">
+        </div>
+        <div class="cont4_2_2">
+            <img class="imlog" src="imagenes/intermedios.png" alt="inter">
+            <h4>Lleva tu entrenamiento al siguiente nivel y
+                supera tus propios límites. Aumenta la
+                intensidad, mejora tu resistencia y
+                fortalece tu cuerpo con rutinas diseñadas
+                para desafiarte constantemente y llevar tu
+                condición física a nuevas alturas.
+            </h4>
+            <br>
+            <div class="mlml">
+              <a href="intermedios.html">
+                <div class="btnVAMOS" style="margin-right: none;">
+                <h5>VAMOS</h5>
+              </div></a>
+            </div>
+            
+            
+        </div>
+      </div>
+
+
+      <div class="cont4">
+        <div class="cont4_1">
+            <img class="imlog2" src="imagenes/personalizado.png" alt="perso">
+            <h4>Diseña una rutina que se adapte a tus 
+                objeticos, necesidades y nivel de condición 
+                física. Con nuestro plan personalizado, un 
+                experto evaluará tu perfil y te 
+                proporcionará una guía única, ajustada a 
+                tu ritmo y metas. Porque cada cuerpo es 
+                distinto, tu rutina tambien debe serlo.
+            </h4>
+            <br>
+            <a href="contacto.html">
+              <div class="btnVAMOS">
+              <h5>VAMOS</h5>
+            </div></a>
+        </div>
+        <div class="cont4_2">
+          <div class="contim">
+            <img class="im1" src="imagenes/p2.1.jpg" alt="imagen1"><img class="im2" src="imagenes/p1.1.jpg" alt="imagen2">
+          </div>
+          </div>
+      </div>
+
+      <script>
+        document.querySelectorAll('a.scroll').forEach(link => {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const target = document.querySelector(this.getAttribute('href'));
+            const startY = window.scrollY;
+            const targetY = target.getBoundingClientRect().top + startY;
+            const distance = targetY - startY;
+            const duration = 500;
+            let startTime = null;
+        
+            function scrollStep(currentTime) {
+              if (!startTime) startTime = currentTime;
+              const timeElapsed = currentTime - startTime;
+              const progress = Math.min(timeElapsed / duration, 1);
+        
+              const ease = progress < 0.5 
+                ? 4 * progress * progress * progress 
+                : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+        
+              window.scrollTo(0, startY + (distance * ease));
+        
+              if (timeElapsed < duration) {
+                requestAnimationFrame(scrollStep);
+              }
+            }
+        
+            requestAnimationFrame(scrollStep);
+          });
+        });
+        </script>
+        
+</body>
+</html>
